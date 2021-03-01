@@ -1,0 +1,7 @@
+{
+  "name": "NotificacionCorreo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

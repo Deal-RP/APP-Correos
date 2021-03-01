@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="goCenter">
+      {{"Nuevo correo" | titlecase}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Destinatario</ion-label>
+      <ion-select [(ngModel)]="receptor">
+        <ion-select-option *ngFor="let user of users">
+          {{ user.mail }}
+        </ion-select-option>
+      </ion-select>
+
+      <ion-input [(ngModel)]="asunto" type="text" placeholder="Asunto..."></ion-input>
+
+      <ion-label position="floating"> Escribe tu mensaje... </ion-label>
+      <ion-textarea [(ngModel)]="msg" rows="14" cols="20"></ion-textarea>
+
+      <ion-input [(ngModel)]="name" type="file" accept="all/*" (change)="upload($event)"></ion-input>
+
+      <ion-button (click)="send()" expand="block" fill="clear" shape="round">
+        Enviar
+      </ion-button>
+
+      <div class="goCenter">
+        <img  [src]="file" >
+      </div>
+      
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
